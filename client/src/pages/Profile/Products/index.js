@@ -127,36 +127,37 @@ function Products() {
     getData();
   }, []);
   return (
-    <div>
-      <div className="flex justify-end mb-2">
-        <Button
-          type="default"
-          onClick={() => {
-            setSelectedProduct(null);
-            setShowProductForm(true);
-          }}
-        >
-          Add Product
-        </Button>
-      </div>
-      <Table columns={columns} dataSource={products} />
-      {showProductForm && (
-        <ProductsForm
-          showProductForm={showProductForm}
-          setShowProductForm={setShowProductForm}
-          selectedProduct={selectedProduct}
-          getData={getData}
-        />
-      )}
-
-      {showBids && (
-        <Bids
-          showBidsModal={showBids}
-          setShowBidsModal={setShowBids}
-          selectedProduct={selectedProduct}
-        />
-      )}
+    <div className="flex flex-col">
+    <div className="flex justify-end mb-4">
+      <Button
+        type="default"
+        onClick={() => {
+          setSelectedProduct(null);
+          setShowProductForm(true);
+        }}
+      >
+        Add Products
+      </Button>
     </div>
+    <div className="overflow-x-auto">
+      <Table columns={columns} dataSource={products} />
+    </div>
+    {showProductForm && (
+      <ProductsForm
+        showProductForm={showProductForm}
+        setShowProductForm={setShowProductForm}
+        selectedProduct={selectedProduct}
+        getData={getData}
+      />
+    )}
+    {showBids && (
+      <Bids
+        showBidsModal={showBids}
+        setShowBidsModal={setShowBids}
+        selectedProduct={selectedProduct}
+      />
+    )}
+  </div>
   );
 }
 

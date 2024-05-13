@@ -75,11 +75,11 @@ function ProtectedPage({ children }) {
       <div>
         {/* header */}
         <div className="flex justify-between items-center bg-primary p-5">
-          <h1
-            className="text-2xl text-white cursor-pointer"
+        <h1
+            className="text-2xl text-white cursor-pointer  mb-4 md:mb-0 md:mr-4 flex items-center"
             onClick={() => navigate("/")}
           >
-            SHEY MP
+           <img className="w-[140px] h-[65px] object-cover " src="/logo2.png" alt="hello" />
           </h1>
 
           <div className="bg-white py-2 px-5 rounded flex gap-1 items-center">

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { v4 as uuidv4 } from "uuid";
 const categories = [
   {
     name: "Electronics",
@@ -62,7 +62,7 @@ function Filters({ showFilters, setShowFilters, filters, setFilters }) {
         <div className="flex flex-col">
           {categories.map((category) => {
             return (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2" key={uuidv4()}>
                 <input
                   type="checkbox"
                   name="category"
@@ -95,7 +95,7 @@ function Filters({ showFilters, setShowFilters, filters, setFilters }) {
         <div className="flex flex-col">
           {ages.map((age) => {
             return (
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center" key={uuidv4()}>
                 <input
                   type="checkbox"
                   name="age"

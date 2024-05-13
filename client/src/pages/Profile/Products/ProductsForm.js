@@ -136,6 +136,7 @@ function ProductsForm({
                       label={item.label}
                       name={item.name}
                       valuePropName="checked"
+                      key={item._id}
                     >
                       <Input
                         type="checkbox"
